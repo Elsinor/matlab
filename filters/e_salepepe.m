@@ -2,9 +2,9 @@ function res = e_salepepe (img, perc, grayscale)
 %E_SALEPEPE (img, perc, grayscale) 
 %Filtro sale pepe.
 % res = E_SALEPEPE(img, perc, grayscale = false) ritorna la matrice modificata.
-%  - img Ë l'immagine a cui viene applicato il filtro.
-%  - perc Ë la percentuale di sale e pepe che verr‡ applicata.
-%  - grayscale Ë opzionale, se 'true' converte la matrice in scala di grigi prima di
+%  - img √® l'immagine a cui viene applicato il filtro.
+%  - perc √® la percentuale di sale e pepe che verr√† applicata.
+%  - grayscale √® opzionale, se 'true' converte la matrice in scala di grigi prima di
 %     applicare il filtro.
 
 % check args
@@ -25,7 +25,7 @@ perm = randperm(p);
 % alla percentuale ricevuta in input.
 perc = round(perc/2 * p / 100);
 
-% se Ë stata richiesta l'immagine in scala di grigi
+% se √® stata richiesta l'immagine in scala di grigi
 if (grayscale == true)
     res = e_rgb2gray(img, 'intensity');
     res( perm(1 : perc) ) = 255;
@@ -36,7 +36,7 @@ else
     % ad ogni iterazione del seguente for corrisponde 
     % il rispettivo canale rgb
     for i = 1 : 3
-        % a Ë un singolo canale rgb temporaneo
+        % a √® un singolo canale rgb temporaneo
     	a = res(:, :, i);  
         % ad ogni canale, in corrispondenza degli stessi indici della
         % permutazione, vengono assegnati valori di sale e pepe.
@@ -45,7 +45,3 @@ else
         res(:, :, i) = a;
     end
 end
-
-
-
-
