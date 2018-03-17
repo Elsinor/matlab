@@ -1,4 +1,4 @@
-function gray = grayscale(imgSource, algorithm, show)
+function gray = e_rgb2gray(imgSource, algorithm, show)
 
 % Default Args
 if nargin < 3
@@ -81,5 +81,5 @@ if show == true && execAlg == true
     titleString = ['Grayscaled with ' upper(algorithm)];
     title(titleString);
 elseif execAlg == false
-        fprintf(strcat(algorithm, ' is not a valid algorithm'));  
+        fprintf(strcat(algorithm, ' is not a valid algorithm.\n'));  
 end 
